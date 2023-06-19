@@ -39,10 +39,7 @@ pipeline {
     stage('Deploying React.js container to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(
-            configs: "deployment.yaml", "service.yaml",
-            secretName: 'certificate-authority-data'
-          )
+          kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
         }
       }
     }
