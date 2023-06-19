@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "bravinwasike/react-app"
+    dockerimagename = "aweit/react-app"
     dockerImage = ""
   }
 
@@ -25,8 +25,8 @@ pipeline {
 
     stage('Pushing Image') {
       environment {
-               registryCredential = 'dockerhub-credentials'
-           }
+        registryCredential = 'dockerhub-credentials'
+      }
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
