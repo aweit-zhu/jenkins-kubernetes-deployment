@@ -5,7 +5,11 @@ pipeline {
     dockerImage = ""
   }
 
-  agent any
+  agent{
+    node{
+      label 'slave-pipeline'
+    }
+  }
 
   stages {
 
